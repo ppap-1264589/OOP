@@ -16,7 +16,7 @@
 - Trên Codefun cũng có lời giải công khai bài này, và nó cũng khá đơn giản
 - Đây là cách của mình
 
-```c++
+```c+
 #include <iostream>
 using namespace std;
 string itemName[1001];
