@@ -86,6 +86,5 @@ int main (){
 	Bill.displayInvoice(m);
 	cout << "Total: ";
 	Bill.getTotal(m);
-	return 0;	
 }
 ```
