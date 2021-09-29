@@ -59,6 +59,7 @@ public:
 	void displayInvoice(int m){
 		for (int i = 0; i < m; i++){
 			cout << ItemIndex[i]+1 << " " << itemBuy[i] << " ";
+			
 			cout << number[i] << " " << number[i]*PriceIndex[i] << "\n";
 		}
 	}
