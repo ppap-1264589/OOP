@@ -1,15 +1,15 @@
 # [Trang chủ](https://ppap-1264589.github.io/interesting-solution)
 
 ## Các bài toán
-- 1. Codefun - P20002
-- 2. Serie A
+- A. Codefun - P20002
+- B. Serie A
 * Link download đề bài:
 - [Codefun - P20002](https://codefun.vn/problems/P20002)
 - [Serie A](https://github.com/ppap-1264589/OOP/files/7253729/SERIEA.pdf)
 
 ## Chi tiết
 
-### 1. Codefun - P20002
+### A. Codefun - P20002
 
 - Nhận xét: một bài toán OOP rất bình thường ✔️
 - Thực tế thì giới hạn của n và m khá bé, nên ĐPT thuật toán ở đây O(n^2) cũng được
@@ -58,7 +58,8 @@ public:
 	}
 	void displayInvoice(int m){
 		for (int i = 0; i < m; i++){
-			cout << ItemIndex[i]+1 << " " << itemBuy[i] << " " << number[i] << " " << number[i]*PriceIndex[i] << endl;
+			cout << ItemIndex[i]+1 << " " << itemBuy[i] << " ";
+			cout << number[i] << " " << number[i]*PriceIndex[i] << "\n";
 		}
 	}
 	void getTotal(int m){
