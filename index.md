@@ -92,11 +92,11 @@ int main (){
 
 - Với mỗi một Team, ta khởi tạo một class:
 
- 	- Gồm các tham số như : điểm, số bàn thắng, bàn thua,...
+Gồm các tham số như : điểm, số bàn thắng, bàn thua,...
 	
-	- Phương thức update tỉ số và điểm của Team
+Phương thức update tỉ số và điểm của Team
 	
-	- Quy ước tính chất của toán tử '<' trong phép sort bảng điểm số
+Quy ước tính chất của toán tử '<' trong phép sort bảng điểm số
 	
 - Dùng map để đánh dấu tên các đội -> số
 
