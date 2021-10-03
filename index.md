@@ -87,3 +87,85 @@ int main (){
     Bill.getTotal(m);
 }
 ```
+
+### B. Serie A
+
+- Với mỗi một Team, ta khởi tạo một class:
+
+ 	+) Gồm các tham số như : điểm, số bàn thắng, bàn thua,...
+	
+	+) Phương thức update tỉ số và điểm của Team
+	
+	+) Quy ước tính chất của toán tử '<' trong phép sort bảng điểm số
+	
+- Dùng map để đánh dấu tên các đội -> số
+
+- Nên sử dụng nạp chồng toán tử để dễ thao tác với tập hợp các Team
+
+```c++
+#include <bits/stdc++.h>
+#define Task "A"
+using namespace std;
+
+const int maxn = 1001;
+map<string, int> m;
+int cnt = 0;
+int n;
+string t1, t2;
+
+class team {
+public:
+    string name;
+    int match, score, win, lost, draw, goal, goaled;
+    team(){
+        match = win = lost = score = draw = goal = goaled = 0;
+        cin >> name;
+        m[name] = cnt++;
+    };
+    ~team(){};
+
+public:
+    friend ostream& operator << (ostream& os, team& t) {
+        os << t.name << " " << t.match << " " << t.score << " ";
+        os << t.win << " " << t.lost << " " << t.draw << " ";
+        os << t.goal << " " << t.goaled << " " << t.goal - t.goaled << "\n";
+        return os;
+    } //nạp chồng toán tử cout
+
+    void update(int goal, int goaled) {
+        this->goal += goal;
+        this->goaled += goaled;
+        if (goal > goaled) {
+            win++;
+            score += 3;
+        }
+        else if (goal < goaled) lost++;
+        else {
+            score++;
+            draw++;
+        }
+        this -> match++;
+    }
+    
+    int w_l() {return goal - goaled;}
+    
+    friend bool operator < (team& l, team& t) {
+        if (l.score != t.score) return l.score > t.score;
+        if (l.w_l() != t.w_l()) return l.w_l() > t.w_l();
+        if (l.goal != t.goal) return l.goal > t.goal;
+        return l.name < t.name;
+    } // nạp chồng toán tử '<' trong phép sort
+};
+
+int main() {
+    cin >> n;
+    vector<team> a(n);
+    int ts1, ts2; // tỉ số
+    while(cin >> t1 >> t2 >> ts1 >> ts2){
+        a[m[t1]].update(ts1, ts2);
+        a[m[t2]].update(ts2, ts1);
+    }
+    sort(a.begin(), a.end());
+    for (auto i : a) cout << i;
+}
+```
