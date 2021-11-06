@@ -90,6 +90,28 @@ int main (){
 
 ### B. Serie A
 
+## Tóm tắt đề bài
+
+Yêu cầu: Biết thông tin về những trận bóng đã đấu, hãy lập bảng thống kê thành tích của từng đội bóng theo thứ tự từ cao xuống thấp. 
+
+Cách xếp như sau: Với hai đội bất kỳ thì:
+
+- Đội nào nhiều điểm hơn sẽ xếp trước
+ 
+- Nếu hai đội bằng điểm thì đội nào có hiệu số Bàn thắng - Bàn thua cao hơn sẽ xếp trước.
+
+- Nếu vẫn bằng nhau về hiệu số bàn Thắng - Thua thì đội nào ghi được nhiều bàn thắng hơn sẽ xếp trước.
+
+- Còn nếu lại bằng nhau cả về số bàn thắng thì đội nào có tên (xếp theo vần ABC) nhỏ hơn sẽ xếp trước.
+
+Thông tin chung về giải: 
+
+- Mỗi đội chỉ ghi được tối đa 10 bàn trong một trận, giải được thi đấu theo thể thức vòng tròn hai lượt. 
+
+- Với mỗi trận, đội thắng được 3 điểm, đội hoà được 1 điểm, đội thua được 0 điểm. Tên của các đội hoàn toàn phân biệt.
+
+## Hướng dẫn
+
 - Với mỗi một Team, ta khởi tạo một class:
 
 Gồm các tham số như : điểm, số bàn thắng, bàn thua,...
